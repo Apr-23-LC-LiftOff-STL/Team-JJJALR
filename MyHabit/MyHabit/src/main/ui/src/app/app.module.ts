@@ -10,6 +10,8 @@ import { HttpClientModule, HttpClient} from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { RegistrationComponent } from './registration/registration.component';
 import { HomepageComponent } from './homepage/homepage.component';
+import { EditorModule } from '@tinymce/tinymce-angular';
+import { HabitcreateHabitComponent } from './habitcreate-habit/habitcreate-habit.component';
 
 
 const routes: Routes = [
@@ -28,6 +30,7 @@ const routes: Routes = [
     UserloginComponent,
     RegistrationComponent,
     HomepageComponent,
+    HabitcreateHabitComponent,
   ],
   imports: [
     // FlexLayoutModule,
@@ -35,7 +38,8 @@ const routes: Routes = [
     AppRoutingModule,
     RouterModule.forRoot(routes),
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    EditorModule
   ],
   providers: [],
   bootstrap: [AppComponent]
