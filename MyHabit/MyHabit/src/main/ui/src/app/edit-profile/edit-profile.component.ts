@@ -18,77 +18,85 @@ export class EditProfileComponent implements OnInit {
 
 
   // CONSTRUCTORS
-  constructor(private editProfileService: EditProfileService, private http: HttpClient, private router: Router) {
-    this.http = http;
-    this.router = router;
-  }
+  constructor(private http: HttpClient, private router: Router) { }
+
+  // constructor(private editProfileService: EditProfileService, private http: HttpClient, private router: Router) {
+  //   this.http = http;
+  //   this.router = router;
+  // }
 
   ngOnInit(): void {
+    // on initialization, if authToken (userId) doesn't exist
     if (!localStorage.authToken) {
+      // route to registration form
       this.router.navigate(['/registration'])
     } else {
+      // else if authToken is valid (user does exist), go to user's profile
       let url = `http://localhost:8080/profile/${localStorage.authToken}`
-      this.http.get<any>(url).subscribe(res => {
+      // make a get request to user profile url with userId
+      this.http.get<any>(url)
+      // when the get request is made, assign the user's id to "response"
+      .subscribe(response => {
         // profileEdit now holds the User object for the user logged in
-        // res is the response (user id)
-        this.profileEdit = res;
+        this.profileEdit = response;
       })
     }
   }
 
-  
+
   // METHODS:
 
   // UPDATE PROFILE INFO
-  // onUpdateProfile takes in editPorfileForm as paramenter, returns nothing (void)
-  public onUpdateProfile(editProfileForm: NgForm): void {
-    // call updateProfile method from editProfileService
-    // takes in values from profile form (editProfileForm.value) as parameters
-    // .subscribe listens for the appropriate event to execute the fxn in ()
-    this.editProfileService.updateProfile(editProfileForm.value).subscribe(
-      // assign ProfileEdit values to response variable
-      (response: ProfileEdit) => {
-        // when event occurs, .subscribe will print response
-        console.log(response);
-        // if a user's id (I picked an arbitrary field) is not undefined
-        if (response.id != 0) {
-          // then return the user to their profile???
-          this.router.navigate(['profile'])
-        }
-      },
-      // if an error occurs, print error message
-      (error: HttpErrorResponse) => {
-        alert(error.message);
-      }
-    )
-  };
 
   // addProfile method is encompassed in addUsers method in AuthenticationController
   // users create a profile upon registration
 
-  // updateProfile() {
-  //   let url = 'http://localhost:8080/profile/update/info';
-  //   let profileData = {
-  //     userId: this.model.userId,
-  //     firstName: this.model.firstName,
-  //     lastName: this.model.lastName,
-  //     displayName: this.model.displayName,
-  //     email: this.model.email,
-  //     location: this.model.location,
-  //     status: this.model.status
-  //   }
-  //   console.log(profileData)
-  // this.http.put<any>(url, profileData).subscribe(res =>{
-  //   console.log("test")
-  //   console.log(res)
-  //   if(res.id !== 0){
-  //     localStorage.setItem('authToken', res.id)
-  //     console.log(localStorage.authToken)
-  //      this.router.navigate(["homepage"])
-  //   }
-  // }),
-  // console.log()
-  // }
+  updateProfile() {
+    let url = 'http://localhost:8080/profile/update/info';
+    let profileData = {
+      userId: this.model.userId,
+      firstName: this.model.firstName,
+      lastName: this.model.lastName,
+      displayName: this.model.displayName,
+      email: this.model.email,
+      location: this.model.location,
+      status: this.model.status
+    }
+    console.log(profileData)
+    this.http.put<any>(url, profileData).subscribe(res => {
+      console.log("test")
+      console.log(res)
+      if (res.id !== 0) {
+        localStorage.setItem('authToken', res.id)
+        console.log(localStorage.authToken)
+        this.router.navigate(["profile"])
+      }
+    }),
+      console.log()
+  }
+
+  // onUpdateProfile takes in editPorfileForm as paramenter, returns nothing (void)
+  // public onUpdateProfile(editProfileForm: NgForm): void {
+  //   // call updateProfile method from editProfileService
+  //   // takes in values from profile form (editProfileForm.value) as parameters
+  //   // .subscribe listens for the appropriate event to execute the fxn in ()
+  //   this.editProfileService.updateProfile(editProfileForm.value).subscribe(
+  //     // assign ProfileEdit values to response variable
+  //     (response: ProfileEdit) => {
+  //       // when event occurs, .subscribe will print response
+  //       console.log(response);
+  //       // if a user's id (I picked an arbitrary field) is not undefined
+  //       if (response.id != 0) {
+  //         // then return the user to their profile???
+  //         this.router.navigate(['profile'])
+  //       }
+  //     },
+  //     // if an error occurs, print error message
+  //     (error: HttpErrorResponse) => {
+  //       alert(error.message);
+  //     }
+  //   )
+  // };
 
   // updateProfilePic() {
   //   let url = 'http://localhost:8080/profile/update/info';
