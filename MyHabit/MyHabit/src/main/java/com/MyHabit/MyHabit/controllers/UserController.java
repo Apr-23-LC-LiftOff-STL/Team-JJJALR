@@ -30,7 +30,7 @@ public class UserController {
 
   // (POTENTIAL BUTTONS)
   // update profile information
-  @PutMapping("/update/profile")
+  @PutMapping("/update/info")
   public ResponseEntity<Users> updateProfile(@RequestBody Users user, String first, String last, String display, String email, String location) {
     Users updatedProfile = userService.updateProfile(user, first, last, display, email, location);
     return new ResponseEntity<>(updatedProfile, HttpStatus.OK);
