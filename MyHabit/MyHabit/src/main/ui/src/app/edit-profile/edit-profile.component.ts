@@ -3,7 +3,7 @@ import { ProfileEdit } from './edit-profile';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { EditProfileService } from './edit-profile.service';
-import { error } from 'console';
+import { NgForm } from '@angular/forms';
 @Component({
   selector: 'app-edit-profile',
   templateUrl: './edit-profile.component.html',
@@ -41,7 +41,7 @@ export class EditProfileComponent implements OnInit {
 
   // UPDATE PROFILE INFO
   // onUpdateProfile takes in editPorfileForm as paramenter, returns nothing (void)
-  public onUpdateProfile(editProfileForm: ngForm): void {
+  public onUpdateProfile(editProfileForm: NgForm): void {
     // call updateProfile method from editProfileService
     // takes in values from profile form (editProfileForm.value) as parameters
     // .subscribe listens for the appropriate event to execute the fxn in ()
@@ -53,7 +53,7 @@ export class EditProfileComponent implements OnInit {
         // if a user's id (I picked an arbitrary field) is not undefined
         if (response.id != 0) {
           // then return the user to their profile???
-          this.router.navigate([''])
+          this.router.navigate(['profile'])
         }
       },
       // if an error occurs, print error message

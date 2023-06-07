@@ -6,7 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserloginComponent } from './userlogin/userlogin.component';
-import { HttpClientModule, HttpClient} from '@angular/common/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { TimelineComponent } from './timeline/timeline.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -19,14 +19,14 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 
 const routes: Routes = [
-  {path:"", component: HomepageComponent},
-  {path:"login", component: UserloginComponent},
-  {path:"profile", component: ProfileComponent},
+  { path: "", component: HomepageComponent },
+  { path: "login", component: UserloginComponent },
+  { path: "profile", component: ProfileComponent },
   { path: "registration", component: RegistrationComponent },
-  {path: "timeline", component: TimelineComponent},
-  {path:"registration", component: RegistrationComponent},
-  {path:"homepage", component: HomepageComponent}
-
+  { path: "timeline", component: TimelineComponent },
+  { path: "registration", component: RegistrationComponent },
+  { path: "homepage", component: HomepageComponent },
+  { path: "update", component: EditProfileComponent },
 ]
 
 @NgModule({
