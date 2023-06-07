@@ -31,7 +31,7 @@ export class EditProfileComponent implements OnInit {
     }
   }
 
-  // METHODS
+  // EDIT PROFILE METHODS
 
   // addProfile method is encompassed in addUsers method in AuthenticationController
   // users create a profile upon registration
