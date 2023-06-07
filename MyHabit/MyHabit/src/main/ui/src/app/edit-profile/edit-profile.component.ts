@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProfileEdit } from './edit-profile';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-edit-profile',
@@ -33,8 +33,8 @@ export class EditProfileComponent implements OnInit {
 
   // METHODS
 
-  // TODO: need to write an add profile method in UserController if not already there
-  // addProfile() { }
+  // addProfile method is encompassed in addUsers method in AuthenticationController
+  // users create a profile upon registration
 
   updateProfile() {
     let url = 'http://localhost:8080/profile/update/info';
@@ -48,6 +48,16 @@ export class EditProfileComponent implements OnInit {
       status: this.model.status
     }
     console.log(profileData)
+    // this.http.put<any>(url, profileData).subscribe(res =>{
+    //   console.log("test")
+    //   console.log(res)
+    //   if(res.id !== 0){
+    //     localStorage.setItem('authToken', res.id)
+    //     console.log(localStorage.authToken)
+    //      this.router.navigate(["homepage"])
+    //   }
+    // }),
+    // console.log()
   }
 
   // updateProfilePic() {
