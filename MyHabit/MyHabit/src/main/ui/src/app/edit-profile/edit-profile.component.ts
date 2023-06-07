@@ -31,6 +31,9 @@ export class EditProfileComponent implements OnInit {
     }
   }
 
+  // METHODS
+
+  // TODO: need to write an add profile method in UserController if not already there
   // addProfile() { }
 
   updateProfile() {
@@ -44,16 +47,44 @@ export class EditProfileComponent implements OnInit {
       location: this.model.location,
       status: this.model.status
     }
+    console.log(profileData)
   }
 
-  // updateProfilePic() { }
+  // updateProfilePic() {
+  //   let url = 'http://localhost:8080/profile/update/info';
+  //   let picData = {
+  //     userId: this.model.userId,
+  //     picUrl: this.model.picUrl
+  //   }
+  //   console.log(picData)
+  // }
 
-  // updateStatus() { }
+  // updateStatus() {
+  //   let url = 'http://localhost:8080/profile/update/status';
+  //   let statusData = {
+  //     userId: this.model.userId,
+  //     status: this.model.status
+  //   }
+  //   console.log(statusData)
+  // }
 
-  // updateBio() { }
+  // updateBio() {
+  //   let url = 'http://localhost:8080/profile/update/bio';
+  //   let bioData = {
+  //     userId: this.model.userId,
+  //     bio: this.model.bio
+  //   }
+  //   console.log(bioData)
+  // }
 
-  // findUserById() { }
+  // findUserById() {
+  //   let url = 'http://localhost:8080/profile/${localStorage.authToken}';
+  //   let userId = this.model.userId;
+  // }
 
-  // deleteUser() { }
+  // deleteUser() {
+  //   let url = 'http://localhost:8080/profile/delete/${localStorage.authToken}';
+  //   let userId = this.model.userId;
+  // }
 
 }
