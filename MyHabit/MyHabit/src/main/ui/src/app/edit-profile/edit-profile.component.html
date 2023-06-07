@@ -1,1 +1,7 @@
 <p>edit-profile works!</p>
+
+<!-- Update Listing Form -->
+<ng-template #editListing>
+    <form  #editProfileForm="ngForm" (ngSubmit)="onUpdateProfile(editProfileForm)">
+    </form>
+</ng-template>
