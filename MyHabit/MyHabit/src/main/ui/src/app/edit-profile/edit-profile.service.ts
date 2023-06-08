@@ -4,6 +4,11 @@ import { Observable } from "rxjs";
 import { environment } from "src/environments/environment";
 import { ProfileEdit } from "./edit-profile";
 
+// Injectables mark a class as available to be used as a dependency
+// 'root' refers to the application-level injector - it should appear as a provider in the app.module.ts file
+// Services should be scoped (called only when needed) by making them LAZY (lazy loading them)
+
+// INJECTABLE DECORATOR
 @Injectable(
     { providedIn: 'root' }
 )

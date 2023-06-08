@@ -47,6 +47,7 @@ const routes: Routes = [
     MatSlideToggleModule,
     RouterModule.forRoot(routes),
     HttpClientModule,
+    HttpClient,
     FormsModule,
     NoopAnimationsModule
   ],
