@@ -4,6 +4,14 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { EditProfileService } from './edit-profile.service';
 import { NgForm } from '@angular/forms';
+
+
+// Add a component decorator - identifies the class as a component
+// Choose a CSS selector - tells angular to instantiate the component where tag is found in html file
+// Define the template - tells angular how to render the component
+// Declare component styles by calling CSS file
+
+// COMPONENT DECORATOR
 @Component({
   selector: 'app-edit-profile',
   templateUrl: './edit-profile.component.html',
