@@ -29,25 +29,27 @@ export class EditProfileService {
         return this.http.put<ProfileEdit>(`${this.javaServerUrl}/profile/update/info`, profileEdit);
     }
 
-    // update profile picture
-    public updateProfilePic(): Observable<any> {
-        return this.http.put<any>(`${this.javaServerUrl}/profile/update/picture`, Observable);
-    }
 
-    // update status
-    public updateStatus(): Observable<any>  {
-        return this.http.put<any>(`${this.javaServerUrl}/profile/update/status`, Observable);
-    }
+    // MOVE TO THEIR OWN INDIVIDUAL COMPONENTS
+    // // update profile picture
+    // public updateProfilePic(): Observable<any> {
+    //     return this.http.put<any>(`${this.javaServerUrl}/profile/update/picture`, Observable);
+    // }
 
-    // update bio
-    public updateBio(): Observable<any>  {
-        return this.http.put<any>(`${this.javaServerUrl}/profile/update/bio`, Observable);
-    }
+    // // update status
+    // public updateStatus(): Observable<any>  {
+    //     return this.http.put<any>(`${this.javaServerUrl}/profile/update/status`, Observable);
+    // }
 
-    // find profile by id
-    public findUserById(id: number): Observable<any>  {
-        return this.http.get<any>(`${this.javaServerUrl}/profile/${id}`);
-    }
+    // // update bio
+    // public updateBio(): Observable<any>  {
+    //     return this.http.put<any>(`${this.javaServerUrl}/profile/update/bio`, Observable);
+    // }
+
+    // // find profile by id
+    // public findUserById(id: number): Observable<any>  {
+    //     return this.http.get<any>(`${this.javaServerUrl}/profile/${id}`);
+    // }
 
     // MOVE TO USER SERVICE COMPONENT
     // display user profile
