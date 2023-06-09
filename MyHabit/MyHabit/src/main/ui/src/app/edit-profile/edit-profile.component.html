@@ -1,46 +1,27 @@
-<app-edit-profile></app-edit-profile>
-<h1>Update Your Profile</h1>
+<!DOCTYPE HTML>
+<html lang="en">
 
-<body>
+<app-navbar></app-navbar>
 
-    <form name="editProfileForm" (ngSubmit)="updateProfile()" #f="ngForm" action="action_page.php">
-        <div class="container">
+<head>
+    <title>myhabit | a place for good habits</title>
+    <link rel="stylesheet" href="edit-profile.component.css" />
+</head>
 
-
-            <hr>
-
-            <label for="firstName"><b>First Name</b></label><br>
-            <input type="text" placeholder="Enter Your First Name" name="firstName" [(ngModel)]="model.firstName"
-                id="firstName" required><br>
+<ng-template #editProfile>
+    <form #editProfileForm="ngForm" (ngSubmit)="onUpdateProfile(editProfileForm)">
+        <p>Personal Information</p>
+        <fieldset>
+            <legend>First Name </legend>
+            <input name="firstName" required #firstName="ngModel" ngModel="{{profileEdit?.firstName}}" id="firstName"
+                type="text" class="form-control" placeholder="First Name">
+            <label for="firstName">Street Address</label>
             <br>
-            <label for="lastName"><b>Last Name</b></label><br>
-            <input type="text" placeholder="Enter Your First Name" name="lastName" [(ngModel)]="model.lastName"
-                id="lastName" required><br>
+            <legend>Last Name </legend>
+            <input name="lastName" required #lastName="ngModel" ngModel="{{profileEdit?.lastName}}" id="lastName"
+                type="text" class="form-control" placeholder="Last Name">
+            <label for="lastName">Last Name</label>
             <br>
-            <label for="displayName"><b>Display Name</b> *Optional</label>
-            <p>Your display name is the shown on your profile.</p>
-            <input type="text" placeholder="Enter Your Display Name" name="displayName" [(ngModel)]="model.displayName"
-                id="displayName"><br>
-            <br>
-            <label for="email"><b>Email</b></label><br>
-            <input type="email" placeholder="Email" name="email" [(ngModel)]="model.email" id="email" required><br>
-            <br>
-            <label for="location"><b>Location</b> *Optional</label><br>
-            <input type="text" placeholder="Where do you live?" name="location" [(ngModel)]="model.location"
-                id="location">
-            <br>
-            <br>
-            <button type="submit" class="saveUpdatebtn">Save</button>
-
-            <hr>
-
-
-
-        </div>
-        <br>
-        <br>
-        <div class="container signin">
-            <p>Already have an account? <a href="/login">Sign in</a>.</p>
-        </div>
+        </fieldset>
     </form>
-</body>
+</ng-template>
