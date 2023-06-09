@@ -26,32 +26,34 @@ export class EditProfileService {
     // EDIT-PROFILE METHODS
     // update existing profile (personal information ONLY)
     public updateProfile(profileEdit: ProfileEdit): Observable<ProfileEdit> {
-        return this.http.put<ProfileEdit>(`${this.javaServerUrl}/profile/update/info`, profileEdit);
+        return this.http.put<ProfileEdit>(`${this.javaServerUrl}/profile/${id}/update/info`, profileEdit);
     }
 
 
-    // MOVE TO THEIR OWN INDIVIDUAL COMPONENTS
+    // TODO: MOVE TO THEIR OWN INDIVIDUAL COMPONENTS - need their own forms
     // // update profile picture
     // public updateProfilePic(): Observable<any> {
-    //     return this.http.put<any>(`${this.javaServerUrl}/profile/update/picture`, Observable);
+    //     return this.http.put<any>(`${this.javaServerUrl}/profile/${id}/update/picture`, Observable);
     // }
 
     // // update status
     // public updateStatus(): Observable<any>  {
-    //     return this.http.put<any>(`${this.javaServerUrl}/profile/update/status`, Observable);
+    //     return this.http.put<any>(`${this.javaServerUrl}/profile/${id}/update/status`, Observable);
     // }
 
     // // update bio
     // public updateBio(): Observable<any>  {
-    //     return this.http.put<any>(`${this.javaServerUrl}/profile/update/bio`, Observable);
+    //     return this.http.put<any>(`${this.javaServerUrl}/profile/${id}/update/bio`, Observable);
     // }
 
+
+    // MOVE TO USER SERVICE COMPONENT
+    // ** insert findAllUsers method somewhere
+    //
     // // find profile by id
     // public findUserById(id: number): Observable<any>  {
     //     return this.http.get<any>(`${this.javaServerUrl}/profile/${id}`);
     // }
-
-    // MOVE TO USER SERVICE COMPONENT
     // display user profile
     // public displayUserProfile(id: number): Observable<any> {
     //     return this.http.get<any> (`${this.javaServerUrl}/profile/${id}`, Observable);

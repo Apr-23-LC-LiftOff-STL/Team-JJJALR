@@ -73,6 +73,7 @@ public class UserService {
   }
 
   // MODIFIED REPO METHODS
+  // TODO: implement this method somewhere (not UserController because routing is to "/profile"), so it can be used to search for all users
   // find all users
   public List<Users> findAllUsers() {
     return userRepo.findAll();
@@ -88,7 +89,7 @@ public class UserService {
     userRepo.deleteUsersById(id);
   }
 
-  // ORIGINAL UPDATE METHODS
+  // ORIGINAL UPDATE METHODS - before refactoring to minimize parameters, add path variables in controller
 //  // add entirely new profile - certain fields are specified in order to prevent user from accessing all data associated with user objects
 //  public Users addProfile(Users user, String first, String last, String display, String email, String location, String pic, String status, String bio) {
 //    user.setFirstName(first);

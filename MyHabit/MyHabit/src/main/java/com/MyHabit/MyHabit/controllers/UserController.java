@@ -110,13 +110,4 @@ public class UserController {
 //    return new ResponseEntity<>(newBio, HttpStatus.OK);
 //  }
 
-
-// PROFILE ADDED DURING REGISTRATION PROCESS
-//  // add new profile
-//  @PostMapping("/add")
-//  public ResponseEntity<Users> addProfile(@RequestBody Users user, String first, String last, String display, String email, String location, String pic, String status, String bio) {
-//    Users newProfile = userService.addProfile(profile, first, last, display, email, location, pic, status, bio);
-//    return new ResponseEntity<>(newProfile, HttpStatus.CREATED);
-//  }
-
 }
