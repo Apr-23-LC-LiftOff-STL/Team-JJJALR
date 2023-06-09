@@ -1,5 +1,5 @@
 import { HttpClient } from "@angular/common/http";
-import { Injectable } from "@angular/core";
+import { Injectable, OnInit } from "@angular/core";
 import { Observable } from "rxjs";
 import { environment } from "src/environments/environment";
 import { ProfileEdit } from "./edit-profile";
@@ -14,44 +14,48 @@ import { ProfileEdit } from "./edit-profile";
 )
 
 export class EditProfileService {
+
+    // assign backend URL from environment.ts to the javaServerUrl variable to reference below
     private javaServerUrl = environment.devServerUrl;
 
+    // CONSTRUCTOR
+    // add HttpClient to make call to the backend
     constructor(private http: HttpClient) { }
 
-    // EDIT PROFILE METHODS
 
-    // // display user profile
-    // public displayUserProfile(id: number): Observable<???> {
-    //     return this.http.get<???> (`${this.javaServerUrl}/profile/${id}`);
-    // }
-
+    // EDIT-PROFILE METHODS
     // update existing profile (personal information ONLY)
     public updateProfile(profileEdit: ProfileEdit): Observable<ProfileEdit> {
         return this.http.put<ProfileEdit>(`${this.javaServerUrl}/profile/update/info`, profileEdit);
     }
 
-    // // update profile picture
-    // public updateProfilePic() {
-    //     return this.http.put<ProfileEdit>(`${this.javaServerUrl}/profile/update/info`, profileEdit);
-    // }
+    // update profile picture
+    public updateProfilePic(): Observable<any> {
+        return this.http.put<any>(`${this.javaServerUrl}/profile/update/picture`, Observable);
+    }
 
-    // // update status
-    // public updateStatus() {
-    //     return this.http.put<ProfileEdit>(`${this.javaServerUrl}/profile/update/info`, profileEdit);
-    // }
+    // update status
+    public updateStatus(): Observable<any>  {
+        return this.http.put<any>(`${this.javaServerUrl}/profile/update/status`, Observable);
+    }
 
-    // // update bio
-    // public updateBio() {
-    //     return this.http.put<ProfileEdit>(`${this.javaServerUrl}/profile/update/info`, profileEdit);
-    // }
+    // update bio
+    public updateBio(): Observable<any>  {
+        return this.http.put<any>(`${this.javaServerUrl}/profile/update/bio`, Observable);
+    }
 
-    // // find profile by id
-    // public findUserById(int id) {
-    //     return this.http.put<ProfileEdit>(`${this.javaServerUrl}/profile/update/info`, profileEdit);
-    // }
+    // find profile by id
+    public findUserById(id: number): Observable<any>  {
+        return this.http.get<any>(`${this.javaServerUrl}/profile/${id}`);
+    }
 
-    // // delete profile
-    // public deleteUser(id: number): Observable<void>  {
+    // MOVE TO USER SERVICE COMPONENT
+    // display user profile
+    // public displayUserProfile(id: number): Observable<any> {
+    //     return this.http.get<any> (`${this.javaServerUrl}/profile/${id}`, Observable);
+    // }
+    // // delete user
+    // public deleteUser(userId: number): Observable<void>  {
     //     return this.http.delete<void>(`${this.javaServerUrl}/profile/delete/${id}`);
     // }
 

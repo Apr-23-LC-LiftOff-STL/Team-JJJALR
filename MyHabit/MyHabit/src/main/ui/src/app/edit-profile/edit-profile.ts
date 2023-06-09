@@ -1,7 +1,5 @@
 export interface ProfileEdit {
 id: number;
-// not sure if user is needed here since we can find user with id
-// user: string; 
 firstName: string;
 lastName: string;
 displayName: string;
