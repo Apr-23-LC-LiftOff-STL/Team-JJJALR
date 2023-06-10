@@ -25,7 +25,7 @@ export class EditProfileComponent implements OnInit {
   public editProfileForm!: NgForm;
 
 
-  // CONSTRUCTORS
+  // CONSTRUCTOR
   constructor(private editProfileService: EditProfileService, private http: HttpClient, private router: Router) {
     this.http = http;
     this.router = router;

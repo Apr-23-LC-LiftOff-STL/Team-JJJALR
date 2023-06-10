@@ -1,0 +1,89 @@
+<app-navbar></app-navbar>
+
+<head>
+    <title>myhabit | a place for good habits</title>
+    <link rel="stylesheet" href="add-profile.component.css" />
+</head>
+
+<body>
+    <div>
+        <h1>Add Profile</h1>
+        <p>Add your personal and profile information below.</p>
+        <hr>
+        <form #addProfileForm="ngForm" (ngSubmit)="addProfile()">
+
+            <br>
+
+            <label for="personalInformation"><b>Personal Information</b></label>
+            <fieldset id="personalInformation">
+
+                <br>
+
+                <label for="firstName">First Name: </label>
+                <input name="firstName" class="form-control" required type="text" id="firstName" placeholder="Jane" #firstName="ngModel"
+                    ngModel="{{model.firstName}}">
+
+                <label for="lastName">Last Name: </label>
+                <input name="lastName" class="form-control" required type="text" id="lastName" placeholder="Doe" #lastName="ngModel"
+                    ngModel="{{model.lastName}}">
+
+                <br><br>
+
+                <label for="email">Email: </label>
+                <input name="email" class="form-control" required type="email" id="email" placeholder="jane.doe@email.com"
+                    #email="ngModel" ngModel="{{model.email}}">
+
+                <br><br>
+
+                <label for="location">Location: </label>
+                <input name="location" class="form-control" type="text" id="location" placeholder="St. Louis, MO"
+                    #location="ngModel" ngModel="{{model.location}}">
+
+                <br>
+
+            </fieldset>
+
+            <br>
+
+            <label for="profileInformation"><b>Profile Information</b></label>
+            <fieldset id="profileInformation">
+                
+                <br>
+
+                <label for="displayName">Display Name: </label>
+                <input name="displayName" class="form-control" type="text" id="displayName" placeholder="janedoe92"
+                    #displayName="ngModel" ngModel="{{model.displayName}}">
+
+                <br><br>
+
+                <label for="status">Status: </label>
+                <input name="status" class="form-control" type="text" id="status" placeholder="What's up?"
+                    #status="ngModel" ngModel="{{model.status}}">
+
+                <br><br>
+
+                <label for="bio">Bio: </label>
+                <input name="bio" class="form-control" type="text" id="bio" placeholder="Tell us about yourself"
+                    #bio="ngModel" ngModel="{{model.bio}}">
+
+                <br><br>
+
+                <label for="profileImageURL">Profile Picture: </label>
+                <input name="profileImageURL" class="form-control" type="url" id="profileImageURL" placeholder="Add a profile picture (URL)"
+                    #profileImageURL="ngModel" ngModel="{{model.profileImageURL}}">
+
+                <br>
+
+            </fieldset>
+            <br>
+            <button type="submit" class="addprofilebtn">Add Profile</button>
+            <br><br>
+        </form>
+    </div>
+
+    <hr>
+    <br>
+    <div class="container signin">
+        <p>Already have an account? <a href="/login">Sign in</a>.</p>
+    </div>
+</body>
