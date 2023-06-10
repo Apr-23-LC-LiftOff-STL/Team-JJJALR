@@ -22,6 +22,7 @@ export class EditProfileComponent implements OnInit {
 
   // PROPERTIES
   public profileEdit!: ProfileEdit;
+  public editProfileForm!: NgForm;
 
 
   // CONSTRUCTORS
@@ -32,14 +33,15 @@ export class EditProfileComponent implements OnInit {
 
   ngOnInit(): void {
     // when the component is initialized it will call the functions below
-      this.onUpdateProfile();
+    this.profileEdit;
+    // this.onUpdateProfile(this.editProfileForm);
   }
 
   public onUpdateProfile(editProfileForm:  NgForm): void {
     this.editProfileService.updateProfile(editProfileForm.value, this.profileEdit.id).subscribe(
       (response: ProfileEdit) => {
         this.profileEdit = response;
-        this.router.navigate(['profile'])
+        this.router.navigate(['info'])
       },
       (error: HttpErrorResponse) => {
         alert(error.message);

@@ -27,7 +27,12 @@ const routes: Routes = [
   { path: "timeline", component: TimelineComponent },
   { path: "registration", component: RegistrationComponent },
   { path: "homepage", component: HomepageComponent },
-  { path: "update", component: EditProfileComponent },
+  {
+    path: "update",
+    children: [
+      { path: "info", component: EditProfileComponent }
+    ]
+  },
 ]
 
 @NgModule({
