@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 // import { profile } from '../profile/profile';
 import { environment } from 'src/environments/environment';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,34 +11,39 @@ import { Router } from '@angular/router';
 })
 export class AddProfileComponent implements OnInit {
 
-  // public newProfile!: profile;
-  private javaServerUrl = environment.devServerUrl;
-  model: any = {};
+ 
 
-  constructor(private http: HttpClient, private router: Router) {
-    this.http = http;
-    this.router = router;
-}
+  constructor(){}
 
-ngOnInit(): void {
-}
+  ngOnInit(): void {
+  }
 
-  public addProfile(){
-  let url = `${this.javaServerUrl}/profile/add`;
-  let profileData = {
-    firstName: this.model.firstName,
-    lastName: this.model.lastName,
-    displayName: this.model.displayName,
-    email: this.model.email,
-    location: this.model.location,
-    status: this.model.status,
-    bio: this.model.bio,
-    profileImageURL: this.model.profileImageURL,
-  };
-  console.log(profileData)
-  this.http.post<any>(url, profileData).subscribe(res => {
-    console.log(res)
-  })
-}
+  // public addProfile() {
+  //   let url = `${this.javaServerUrl}/profile/add`;
+  //   let profileData = {
+  //     firstName: this.model.firstName,
+  //     lastName: this.model.lastName,
+  //     displayName: this.model.displayName,
+  //     email: this.model.email,
+  //     location: this.model.location,
+  //     status: this.model.status,
+  //     bio: this.model.bio,
+  //     profileImageURL: this.model.profileImageURL,
+  //   };
+  //   console.log(profileData)
+  //   console.log(url);
+  //   this.http.post<any>(url, profileData).subscribe(res => {
+  //     console.log(profileData);
+  //     console.log(res); // ERROR OCCURING HERE
 
+  //     //   if(res.id !== 0){
+  //     //     localStorage.setItem('authToken', res.id)
+  //     //     console.log(localStorage.authToken)
+  //     //   }
+  //     // }, (error: HttpErrorResponse) => {
+  //     //   alert(error.message);
+  //     // })
+  //   })
+  // };
+  
 }

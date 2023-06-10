@@ -10,8 +10,8 @@
         <h1>Add Profile</h1>
         <p>Add your personal and profile information below.</p>
         <hr>
-        <form #addProfileForm="ngForm" (ngSubmit)="addProfile()">
-
+        <form name="addProfileForm" class #addProfileForm="ngForm" (ngSubmit)="addProfile()" action="action_page.php">
+        
             <br>
 
             <label for="personalInformation"><b>Personal Information</b></label>
