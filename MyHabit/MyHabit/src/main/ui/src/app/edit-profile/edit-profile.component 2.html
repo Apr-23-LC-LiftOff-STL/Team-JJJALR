@@ -1,0 +1,71 @@
+<app-navbar></app-navbar>
+
+<head>
+    <title>myhabit | a place for good habits</title>
+    <link rel="stylesheet" href="edit-profile.component.css" />
+</head>
+
+<body>
+    <div>
+        <h1>Edit Profile</h1>
+        <p>Update your profile information below.</p>
+        <hr>
+        <form #editProfileForm="ngForm" (ngSubmit)="onUpdateProfile(editProfileForm)">
+
+            <br>
+
+            <label for="personalInformation"><b>Personal Information</b></label>
+            <fieldset id="personalInformation">
+
+                <br>
+
+                <label for="firstName">First Name: </label>
+                <input name="firstName" class="form-control" required type="text" id="firstName" placeholder="Jane" #firstName="ngModel"
+                    ngModel="{{profileEdit?.firstName}}">
+
+                <label for="lastName">Last Name: </label>
+                <input name="lastName" class="form-control" required type="text" id="lastName" placeholder="Doe" #lastName="ngModel"
+                    ngModel="{{profileEdit?.lastName}}">
+
+                <br><br>
+
+                <label for="email">Email: </label>
+                <input name="email" class="form-control" required type="email" id="email" placeholder="jane.doe@email.com"
+                    #email="ngModel" ngModel="{{profileEdit?.email}}">
+
+                <br><br>
+
+                <label for="location">Location: </label>
+                <input name="location" class="form-control" required type="text" id="location" placeholder="St. Louis, MO"
+                    #location="ngModel" ngModel="{{profileEdit?.location}}">
+
+                <br>
+
+            </fieldset>
+
+            <br>
+
+            <label for="profileInformation"><b>Profile Information</b></label>
+            <fieldset id="profileInformation">
+                
+                <br>
+
+                <label for="displayName">Display Name: </label>
+                <input name="displayName" class="form-control" required type="text" id="displayName" placeholder="janedoe92"
+                    #displayName="ngModel" ngModel="{{profileEdit?.displayName}}">
+
+                <br><br>
+
+            </fieldset>
+            <br>
+            <button type="submit" class="savebtn">Save</button>
+            <br><br>
+        </form>
+    </div>
+
+    <hr>
+    <br>
+    <div class="container signin">
+        <p>Already have an account? <a href="/login">Sign in</a>.</p>
+    </div>
+</body>
