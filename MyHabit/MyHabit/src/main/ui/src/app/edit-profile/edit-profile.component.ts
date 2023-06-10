@@ -33,7 +33,9 @@ export class EditProfileComponent implements OnInit {
 
   ngOnInit(): void {
     // when the component is initialized it will call the functions below
-    this.profileEdit;
+    
+    // this.profileEdit.id;
+    // this.profileEdit;
     // this.onUpdateProfile(this.editProfileForm);
   }
 
