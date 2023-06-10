@@ -9,11 +9,9 @@ import java.util.Optional;
 
 @Repository
 public interface UserRepo extends CrudRepository<Users, Integer> {
+
   Users getByUserName(String userName);
-
   void deleteUsersById(int id);
-
   Optional<Users> findUsersById(int id); // optional in case no user w given id
-
   List<Users> findAll();
 }

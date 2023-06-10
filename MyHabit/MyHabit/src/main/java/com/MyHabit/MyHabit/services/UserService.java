@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class UserService {
@@ -88,47 +87,5 @@ public class UserService {
   public void deleteUser(int id) {
     userRepo.deleteUsersById(id);
   }
-
-  // ORIGINAL UPDATE METHODS - before refactoring to minimize parameters, add path variables in controller
-//  // add entirely new profile - certain fields are specified in order to prevent user from accessing all data associated with user objects
-//  public Users addProfile(Users user, String first, String last, String display, String email, String location, String pic, String status, String bio) {
-//    user.setFirstName(first);
-//    user.setLastName(last);
-//    user.setDisplayName(display);
-//    user.setEmail(email);
-//    user.setLocation(location);
-//    user.setProfileImageURL(pic);
-//    user.setStatus(status);
-//    user.setBio(bio);
-//    return userRepo.save(user);
-//  }
-//
-//  // update existing profile (personal information ONLY) - needs @PutMapping
-//  public Users updateProfile(Users user, String first, String last, String display, String email, String location) {
-//    user.setFirstName(first);
-//    user.setLastName(last);
-//    user.setDisplayName(display);
-//    user.setEmail(email);
-//    user.setLocation(location);
-//    return userRepo.save(user);
-//  }
-//
-//  // update profile picture - needs @PutMapping
-//  public Users updateProfilePic(Users user, String pic) {
-//    user.setProfileImageURL(pic);
-//    return userRepo.save(user);
-//  }
-//
-//  // update status - needs @PutMapping
-//  public Users updateStatus(Users user, String status) {
-//    user.setStatus(status);
-//    return userRepo.save(user);
-//  }
-//
-//  // update bio - needs @PutMapping
-//  public Users updateBio(Users user, String bio) {
-//    user.setBio(bio);
-//    return userRepo.save(user);
-//  }
 
 }
