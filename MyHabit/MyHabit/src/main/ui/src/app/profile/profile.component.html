@@ -7,10 +7,7 @@
 </head>
 
 <body>
-<style>
-body {background-image: url('images/backgroundimg.jpeg');}
-</style>
-<audio src="music/NoScrubs.mp3" autoplay="autoplay"></audio>
+  <style> body {background-image: url('assets/images/backgroundimg.jpeg');}</style>
 <div id="entirepage-container">
   <div id="content-container">
     <div id="header">
@@ -32,14 +29,14 @@ body {background-image: url('images/backgroundimg.jpeg');}
           
             <ul class="posts">
             </ul>
+        
           </div>
       
           <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
           <script src="app.js"></script>
     
         <div id="habits-container">
-        <h3>habit ui</h3>
-        <p><strong>Habits</strong></p>
+        <h3>{{userProfile.firstName}}'s Habits</h3>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
         molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
         numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium
@@ -48,14 +45,13 @@ body {background-image: url('images/backgroundimg.jpeg');}
         </div>
     </div>
 
-     <div id="wrapper2">
+        <div id="wrapper2">
             <div id="content">
-            <h3>other stuff</h3>
-            <p><strong>more things</strong></p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
-            molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
-            numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium
-            optio, eaque rerum.</p>
+            <h3>{{userProfile.firstName}}'s Friends</h3>
+            <div><img src="assets/images/2.jpeg" class="friends"></div>
+            <div><img src="assets/images/3.jpeg" class="friends"></div>
+            <div><img src="assets/images/4.jpeg" class="friends"></div>
+            <div><img src="assets/images/5.jpeg" class="friends"></div>
             </div>
         </div>
   
@@ -64,24 +60,24 @@ body {background-image: url('images/backgroundimg.jpeg');}
     <div>
     <div class='icon-container'>
       <div class='online-circle'></div>
-      <img src="images/photoplaceholder.jpeg"></div>
+      <img src="assets/images/jor.jpeg"></div>
     </div>
     <h5>{{userProfile.location}}</h5>
     <p>{{userProfile.status}}</p>
     </div>
 
   <div id="extra">
-    <p><strong>Additional Stuff</strong></p>
-    <p>interests</p>
-    <ul>
-      <li>reading</li>
-      <li>music</li>
-      <li>art</li>
-    </ul>
+    <p><strong>About {{userProfile.firstName}}</strong></p>
+    <p>{{userProfile.bio}}</p>
   </div>
+
+  <div><audio controls>
+    <source src="/assets/music/NoScrubs.mp3" type="audio/mpeg" class="audio">
+  </audio></div>
 
   <div id="footer"><p>This is not affiliated with the original MySpace.</p></div>
   
+</div>
 </div>
 </div>
 </body>

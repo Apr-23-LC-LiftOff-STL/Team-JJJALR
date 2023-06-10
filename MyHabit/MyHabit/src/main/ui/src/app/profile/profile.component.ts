@@ -3,6 +3,17 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { profile } from './profile'
 
+declare var $: any;
+declare var popupFunctionObject:any;
+
+const habits = document.querySelectorAll('habit');
+
+habits.forEach(habit => {
+  habit.addEventListener('click', () => {
+    console.log('hello');
+  })
+})
+
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
