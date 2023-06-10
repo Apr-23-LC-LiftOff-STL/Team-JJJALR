@@ -1,24 +1,26 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { AppRoutingModule } from './app-routing.module';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { ProfileComponent } from './profile/profile.component';
 // import { FlexLayoutModule } from "@angular/flex-layout";
 
-import { AppRoutingModule } from './app-routing.module';
+// COMPONENTS
 import { AppComponent } from './app.component';
 import { UserloginComponent } from './userlogin/userlogin.component';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
 import { TimelineComponent } from './timeline/timeline.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-
 import { RegistrationComponent } from './registration/registration.component';
-import { ProfileComponent } from './profile/profile.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { HomepageComponent } from './homepage/homepage.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
-import { EditProfileService } from './edit-profile/edit-profile.service';
 import { AddProfileComponent } from './add-profile/add-profile.component';
+
+// SERVICES
+// import { EditProfileService } from './edit-profile/edit-profile.service';
 
 const routes: Routes = [
   { path: "", component: HomepageComponent },
@@ -29,12 +31,12 @@ const routes: Routes = [
   { path: "registration", component: RegistrationComponent },
   { path: "homepage", component: HomepageComponent },
   {
-    path: "update",
+    path: "edit",
     children: [
-      { path: "info", component: EditProfileComponent }
+      { path: "info/:id", component: EditProfileComponent }
     ]
   },
-  { path: "profile/add", component: AddProfileComponent }
+
 ]
 
 @NgModule({
@@ -60,7 +62,7 @@ const routes: Routes = [
     NoopAnimationsModule
   ],
   providers: [
-    EditProfileService
+    // EditProfileService
   ],
   bootstrap: [AppComponent]
 })

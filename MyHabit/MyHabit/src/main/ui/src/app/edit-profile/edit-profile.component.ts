@@ -32,11 +32,7 @@ export class EditProfileComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // when the component is initialized it will call the functions below
-    
-    // this.profileEdit.id;
-    // this.profileEdit;
-    // this.onUpdateProfile(this.editProfileForm);
+    this.activatedRoute.paramMap;
   }
 
   public onUpdateProfile(editProfileForm:  NgForm): void {
