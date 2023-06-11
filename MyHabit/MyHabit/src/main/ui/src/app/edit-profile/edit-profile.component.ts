@@ -35,6 +35,7 @@ export class EditProfileComponent implements OnInit {
       (response: ProfileEdit) => {
         this.profileEdit = response;
         response.id = localStorage.authToken;
+        // making sure all ID's are the same
         console.log("profile id: " + this.profileEdit.id);
         console.log("authtoken id: " + localStorage.authToken)
         console.log("response id: " + response.id)
@@ -48,11 +49,11 @@ export class EditProfileComponent implements OnInit {
       (response: ProfileEdit) => {
         this.profileEdit = response;
         response.id = localStorage.authToken;
+         // making sure all ID's are the same
         console.log("profile id: " + this.profileEdit.id);
         console.log("authtoken id: " + localStorage.authToken)
         console.log("response id: " + response.id)
         console.log(response)
-        // this.router.navigate(['login']);
         // this.router.navigate(['profile']) // go to user's profile - route not active yet
       },
       (error: HttpErrorResponse) => {
