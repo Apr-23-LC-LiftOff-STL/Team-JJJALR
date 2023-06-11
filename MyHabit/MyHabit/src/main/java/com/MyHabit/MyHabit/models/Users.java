@@ -24,20 +24,20 @@ public class Users {
   private static final BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 
   // merged profile fields
-  @Size(min = 1, max = 35)
+  @Size(max = 35)
   private String firstName;
 
-  @Size(min = 1, max = 35)
+  @Size(max = 35)
   private String lastName;
 
   @Email
   private String email;
 
   // optional fields
-  @Size(min = 1, max = 35)
+  @Size(max = 35)
   private String displayName; // the name a user wants to display on their profile, instead of their first and last names
 
-  @Size(min = 1, max = 35)
+  @Size(max = 35)
   private String location;
 
   @Size(max = 150)

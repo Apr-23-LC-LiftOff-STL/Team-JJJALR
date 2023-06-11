@@ -17,7 +17,6 @@ import { RegistrationComponent } from './registration/registration.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { HomepageComponent } from './homepage/homepage.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
-import { AddProfileComponent } from './add-profile/add-profile.component';
 
 // SERVICES
 // import { EditProfileService } from './edit-profile/edit-profile.service';
@@ -49,7 +48,6 @@ const routes: Routes = [
     HomepageComponent,
     ProfileComponent,
     EditProfileComponent,
-    AddProfileComponent
   ],
   imports: [
     // FlexLayoutModule,

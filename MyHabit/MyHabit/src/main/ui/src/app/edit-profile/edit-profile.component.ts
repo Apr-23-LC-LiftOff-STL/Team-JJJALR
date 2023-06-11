@@ -32,18 +32,18 @@ export class EditProfileComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.editProfileService.updateProfile(this.profileEdit, this.profileEdit.id).subscribe(
-      (response: ProfileEdit) => {
-        this.profileEdit = response;
-      }
-    )
+    // this.editProfileService.viewProfile(localStorage.authToken).subscribe(
+    //   (response: ProfileEdit) => {
+    //     this.profileEdit = response;
+    //   }
+    // )
   }
 
-  public onUpdateProfile(editProfileForm:  NgForm): void {
-    this.editProfileService.updateProfile(editProfileForm.value, this.profileEdit.id).subscribe(
+  public onUpdateProfile(editProfileForm: NgForm): void {
+    this.editProfileService.updateProfile(editProfileForm.value, localStorage.authToken).subscribe(
       (response: ProfileEdit) => {
         console.log(response);
-        this.router.navigate(['homepage'])
+        // this.router.navigate(['homepage'])
       },
       (error: HttpErrorResponse) => {
         alert(error.message);
