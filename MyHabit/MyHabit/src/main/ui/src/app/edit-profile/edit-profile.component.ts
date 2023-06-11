@@ -31,13 +31,19 @@ export class EditProfileComponent implements OnInit {
     this.router = router;
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.editProfileService.updateProfile(this.profileEdit, this.profileEdit.id).subscribe(
+      (response: ProfileEdit) => {
+        this.profileEdit = response;
+      }
+    )
+  }
 
   public onUpdateProfile(editProfileForm:  NgForm): void {
     this.editProfileService.updateProfile(editProfileForm.value, this.profileEdit.id).subscribe(
       (response: ProfileEdit) => {
-        this.profileEdit = response;
-        this.router.navigate(['info'])
+        console.log(response);
+        this.router.navigate(['homepage'])
       },
       (error: HttpErrorResponse) => {
         alert(error.message);

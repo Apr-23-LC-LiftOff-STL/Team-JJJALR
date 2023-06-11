@@ -5,6 +5,9 @@ lastName: string;
 displayName: string;
 email: string;
 location: string;
+picUrl: string;
+status: string;
+bio: string;
 }
 
 export interface UpdatePic{

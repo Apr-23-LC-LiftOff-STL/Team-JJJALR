@@ -24,9 +24,15 @@ export class EditProfileService {
 
 
     // EDIT-PROFILE METHODS
-    // update existing profile (personal information ONLY)
+
+    // update existing profile
     public updateProfile(profileEdit: ProfileEdit,  id:  number): Observable<ProfileEdit> {
         return this.http.put<ProfileEdit>(`${this.javaServerUrl}/profile/edit/${id}`, profileEdit);
     }
+
+    // view profile
+    // public viewProfile(id:  number): Observable<ProfileEdit> {
+    //     return this.http.get<ProfileEdit>(`${this.javaServerUrl}/profile/${id}`);
+    // }
 
 }
