@@ -5,58 +5,93 @@ import javax.persistence.*;
 @Entity
 public class HabitSettings {
 
-    // FIELDS
-    @Id
-    @GeneratedValue
-    private int id;
+  // FIELDS
+  @Id
+  @GeneratedValue
+  private int id;
 
-    // private ??? startDate
-    // private ??? endDate
-    private boolean active;
-    private boolean complete;
-    private boolean hidden;
+  // private ??? startDate
+  // private ??? endDate
+  private boolean active;
+  private boolean complete;
+  private boolean hidden;
 
-    // table relationships
-    @OneToOne
-    private Habit habit;
+  // table relationships
+  @OneToOne // one habit settings object to one habit
+  private Habit habit;
 
-    @OneToOne
-    private Users user;
+//  @OneToMany
+//  private List<Habit> habit;
 
-//    @OneToMany
-//    private List<Habit> habit;
-
-
-    // CONSTRUCTORS
-    public HabitSettings() {}
+  @OneToOne // one habit settings object to one user
+  private Users user;
 
 
-    // GETTERS & SETTERS
-    public int getId() {
-        return id;
-    }
+  // CONSTRUCTORS
+  public HabitSettings() {
+  }
 
-    public boolean isActive() {
-        return active;
-    }
+  public HabitSettings(boolean active, boolean complete, boolean hidden, Habit habit, Users user) {
+    this.active = active;
+    this.complete = complete;
+    this.hidden = hidden;
+    this.habit = habit;
+    this.user = user;
+  }
 
-    public void setActive(boolean active) {
-        this.active = active;
-    }
+  // GETTERS & SETTERS
+  public int getId() {
+    return id;
+  }
 
-    public boolean isComplete() {
-        return complete;
-    }
+  public boolean isActive() {
+    return active;
+  }
 
-    public void setComplete(boolean complete) {
-        this.complete = complete;
-    }
+  public void setActive(boolean active) {
+    this.active = active;
+  }
 
-    public boolean isHidden() {
-        return hidden;
-    }
+  public boolean isComplete() {
+    return complete;
+  }
 
-    public void setHidden(boolean hidden) {
-        this.hidden = hidden;
-    }
+  public void setComplete(boolean complete) {
+    this.complete = complete;
+  }
+
+  public boolean isHidden() {
+    return hidden;
+  }
+
+  public void setHidden(boolean hidden) {
+    this.hidden = hidden;
+  }
+
+  public Habit getHabit() {
+    return habit;
+  }
+
+  public void setHabit(Habit habit) {
+    this.habit = habit;
+  }
+
+  public Users getUser() {
+    return user;
+  }
+
+  public void setUser(Users user) {
+    this.user = user;
+  }
+
+  @Override
+  public String toString() {
+    return "Habit Settings (Id: " + id + ")" + '\n' +
+      "User: " + user + '\n' +
+      "Habit: " + habit + '\n' +
+      "Status:" + '\n' +
+      "Active: " + active + '\n' +
+      "Complete: " + complete + '\n' +
+      "Hidden from Profile: " + hidden + '\n';
+  }
 }

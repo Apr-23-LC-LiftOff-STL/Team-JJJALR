@@ -58,10 +58,9 @@ public class AuthenticationController {
             return "bad password";
 
         } else {
-           Users newUser = new Users(registrationDTO.getUserName(),registrationDTO.getPassword());
+           Users newUser = new Users(registrationDTO.getUserName(),registrationDTO.getPassword(), registrationDTO.getFirstName(), registrationDTO.getLastName(),registrationDTO.getDisplayName(), registrationDTO.getEmail(), registrationDTO.getLocation(), registrationDTO.getStatus(), registrationDTO.getBio(), registrationDTO.getProfileImageURL());
            userRepo.save(newUser);
            return "account created";
-
         }
     }
 
