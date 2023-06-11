@@ -26,7 +26,7 @@ export class EditProfileService {
     // EDIT-PROFILE METHODS
     // update existing profile (personal information ONLY)
     public updateProfile(profileEdit: ProfileEdit,  id:  number): Observable<ProfileEdit> {
-        return this.http.put<ProfileEdit>(`${this.javaServerUrl}/profile/edit/info/${id}`, profileEdit);
+        return this.http.put<ProfileEdit>(`${this.javaServerUrl}/profile/edit/${id}`, profileEdit);
     }
 
 }
