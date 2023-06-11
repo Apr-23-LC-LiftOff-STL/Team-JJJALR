@@ -30,11 +30,7 @@ const routes: Routes = [
   { path: "registration", component: RegistrationComponent },
   { path: "homepage", component: HomepageComponent },
   {
-    path: "edit",
-    children: [
-      { path: ":id", component: EditProfileComponent }
-    ]
-  },
+    path: "edit/:id", component: EditProfileComponent },
 
 ]
 

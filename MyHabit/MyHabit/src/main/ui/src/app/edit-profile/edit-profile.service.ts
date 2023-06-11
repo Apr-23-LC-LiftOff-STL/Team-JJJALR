@@ -19,6 +19,7 @@ export class EditProfileService {
     private javaServerUrl = environment.devServerUrl;
     private profileEdit!: ProfileEdit;
 
+
     // CONSTRUCTOR
     // add HttpClient to make call to the backend
     constructor(private http: HttpClient) { }
@@ -28,13 +29,11 @@ export class EditProfileService {
 
     // update existing profile
     public updateProfile(profileEdit: ProfileEdit,  id:  number): Observable<ProfileEdit> {
-        localStorage.authToken = id;
         return this.http.put<ProfileEdit>(`${this.javaServerUrl}/profile/edit/${id}`, profileEdit);
     }
 
     // view profile
     public viewProfile(id:  number): Observable<ProfileEdit> {
-        localStorage.authToken = id;
         return this.http.get<ProfileEdit>(`${this.javaServerUrl}/profile/${id}`);
     }
 

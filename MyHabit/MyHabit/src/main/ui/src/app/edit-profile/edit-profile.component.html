@@ -19,25 +19,28 @@
 
                 <br>
 
+                <input name="userName" type="hidden" #userName="ngModel" ngModel="{{profileEdit?.userName}}">
+                <input name="passwordHash" type="hidden" #userName="ngModel" ngModel="{{profileEdit?.passwordHash}}">
+
                 <label for="firstName">First Name: </label>
-                <input name="firstName" class="form-control" required type="text" id="firstName" placeholder="Jane" #firstName="ngModel"
-                    ngModel="{{profileEdit?.firstName}}">
+                <input name="firstName" class="form-control" required type="text" id="firstName" placeholder="Jane"
+                    #firstName="ngModel" ngModel="{{profileEdit?.firstName}}">
 
                 <label for="lastName">Last Name: </label>
-                <input name="lastName" class="form-control" required type="text" id="lastName" placeholder="Doe" #lastName="ngModel"
-                    ngModel="{{profileEdit?.lastName}}">
+                <input name="lastName" class="form-control" required type="text" id="lastName" placeholder="Doe"
+                    #lastName="ngModel" ngModel="{{profileEdit?.lastName}}">
 
                 <br><br>
 
                 <label for="email">Email: </label>
-                <input name="email" class="form-control" required type="email" id="email" placeholder="jane.doe@email.com"
-                    #email="ngModel" ngModel="{{profileEdit?.email}}">
+                <input name="email" class="form-control" required type="email" id="email"
+                    placeholder="jane.doe@email.com" #email="ngModel" ngModel="{{profileEdit?.email}}">
 
                 <br><br>
 
                 <label for="location">Location: </label>
-                <input name="location" class="form-control" required type="text" id="location" placeholder="St. Louis, MO"
-                    #location="ngModel" ngModel="{{profileEdit?.location}}">
+                <input name="location" class="form-control" required type="text" id="location"
+                    placeholder="St. Louis, MO" #location="ngModel" ngModel="{{profileEdit?.location}}">
 
                 <br>
 
@@ -47,12 +50,12 @@
 
             <label for="profileInformation"><b>Profile Information</b></label>
             <fieldset id="profileInformation">
-                
+
                 <br>
 
                 <label for="displayName">Display Name: </label>
-                <input name="displayName" class="form-control" required type="text" id="displayName" placeholder="janedoe92"
-                    #displayName="ngModel" ngModel="{{profileEdit?.displayName}}">
+                <input name="displayName" class="form-control" required type="text" id="displayName"
+                    placeholder="janedoe92" #displayName="ngModel" ngModel="{{profileEdit?.displayName}}">
 
                 <br><br>
 

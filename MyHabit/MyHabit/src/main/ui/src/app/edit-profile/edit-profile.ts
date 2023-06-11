@@ -1,5 +1,7 @@
 export interface ProfileEdit {
 id: number;
+userName: string;
+passwordHash: string;
 firstName: string;
 lastName: string;
 displayName: string;
