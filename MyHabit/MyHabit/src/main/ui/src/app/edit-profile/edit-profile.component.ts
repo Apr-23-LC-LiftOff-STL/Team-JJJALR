@@ -22,8 +22,7 @@ export class EditProfileComponent implements OnInit {
 
   // PROPERTIES
   public profileEdit!: ProfileEdit;
-  public editProfileForm!: NgForm;
-
+  public editProfileForm!: NgForm; 
 
   // CONSTRUCTOR
   constructor(private editProfileService: EditProfileService, private http: HttpClient, private router: Router) {
@@ -34,16 +33,26 @@ export class EditProfileComponent implements OnInit {
   ngOnInit(): void {
     this.editProfileService.viewProfile(localStorage.authToken).subscribe(
       (response: ProfileEdit) => {
-        console.log(response);
+        this.profileEdit = response;
+        response.id = localStorage.authToken;
+        console.log("profile id: " + this.profileEdit.id);
+        console.log("authtoken id: " + localStorage.authToken)
+        console.log("response id: " + response.id)
+        console.log(response)
       }
     )
   }
 
-  public onUpdateProfile(editProfileForm: NgForm): void {
+  public onUpdateProfile(editProfileForm: NgForm): void {  
     this.editProfileService.updateProfile(editProfileForm.value, localStorage.authToken).subscribe(
       (response: ProfileEdit) => {
-        console.log(response);
-        console.log(response.id);
+        this.profileEdit = response;
+        response.id = localStorage.authToken;
+        console.log("profile id: " + this.profileEdit.id);
+        console.log("authtoken id: " + localStorage.authToken)
+        console.log("response id: " + response.id)
+        console.log(response)
+        // this.router.navigate(['login']);
         // this.router.navigate(['profile']) // go to user's profile - route not active yet
       },
       (error: HttpErrorResponse) => {

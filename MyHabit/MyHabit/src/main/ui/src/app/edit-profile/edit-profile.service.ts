@@ -17,8 +17,8 @@ export class EditProfileService {
 
     // assign backend URL from environment.ts to the javaServerUrl variable to reference below
     private javaServerUrl = environment.devServerUrl;
-    private profileEdit!: ProfileEdit;
-
+    public profileEdit!: ProfileEdit;
+      
 
     // CONSTRUCTOR
     // add HttpClient to make call to the backend
@@ -26,15 +26,14 @@ export class EditProfileService {
 
 
     // EDIT-PROFILE METHODS
-
     // update existing profile
     public updateProfile(profileEdit: ProfileEdit,  id:  number): Observable<ProfileEdit> {
-        return this.http.put<ProfileEdit>(`${this.javaServerUrl}/profile/edit/${id}`, profileEdit);
+        return this.http.put<ProfileEdit>(`${this.javaServerUrl}/profile/edit/${localStorage.authToken}`, profileEdit);
     }
 
     // view profile
     public viewProfile(id:  number): Observable<ProfileEdit> {
-        return this.http.get<ProfileEdit>(`${this.javaServerUrl}/profile/${id}`);
+        return this.http.get<ProfileEdit>(`${this.javaServerUrl}/profile/${localStorage.authToken}`);
     }
 
 }
