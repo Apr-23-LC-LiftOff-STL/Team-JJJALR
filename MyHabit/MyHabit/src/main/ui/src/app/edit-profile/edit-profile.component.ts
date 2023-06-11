@@ -31,9 +31,7 @@ export class EditProfileComponent implements OnInit {
     this.router = router;
   }
 
-  ngOnInit(): void {
-    this.activatedRoute.paramMap;
-  }
+  ngOnInit(): void {}
 
   public onUpdateProfile(editProfileForm:  NgForm): void {
     this.editProfileService.updateProfile(editProfileForm.value, this.profileEdit.id).subscribe(

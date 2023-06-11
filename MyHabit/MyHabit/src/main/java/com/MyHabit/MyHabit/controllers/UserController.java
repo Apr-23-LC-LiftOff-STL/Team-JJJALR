@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.*;
 
+import javax.websocket.server.PathParam;
 import java.util.Optional;
 
 @RestController
@@ -29,14 +30,14 @@ public class UserController {
   }
 
   // METHODS
-  // add new profile
-  @PostMapping("/add")
-  public ResponseEntity<Users> addProfile(@RequestBody Users user) {
-    Optional<Users> profile = userRepo.findById(user.getId());
-    if (profile.isPresent()) {
-      Users newProfile = profile.get();
-      userRepo.save(newProfile);
-      return new ResponseEntity<>(newProfile, HttpStatus.CREATED);
+
+  // add/update user profile
+  @PutMapping("/edit/{id}")
+  public ResponseEntity<Users> updateProfile(@RequestBody Users user, @PathVariable("id") int id) {
+    Optional<Users> oldProfile = userRepo.findById(id);
+    if (oldProfile.isPresent()) {
+      Users newProfile = userRepo.save(user);
+      return new ResponseEntity<>(newProfile, HttpStatus.OK);
     }
     return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
   }
@@ -61,36 +62,56 @@ public class UserController {
 
   // (POTENTIAL BUTTONS)
   // update profile information
-  @PutMapping("/edit/info/{id}")
-  public ResponseEntity<Users> updateProfile(@PathVariable("id") int userId) {
-    Optional<Users> profile = userRepo.findById(userId);
-    if (profile.isPresent()) {
-      Users updatedProfile = profile.get();
-      userRepo.save(updatedProfile);
-      return new ResponseEntity<>(updatedProfile, HttpStatus.CREATED);
-    }
-    return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-  }
+//  @PutMapping("/edit/info/{id}")
+//  public ResponseEntity<Users> updateProfile(@PathVariable("id") int userId) {
+//    Optional<Users> profile = userRepo.findById(userId);
+//    if (profile.isPresent()) {
+//      Users updatedProfile = profile.get();
+//      userRepo.save(updatedProfile);
+//      return new ResponseEntity<>(updatedProfile, HttpStatus.OK);
+//    }
+//    return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+//  }
+//
+//  // update profile picture
+//  @PutMapping("/edit/pic/{id}")
+//  public ResponseEntity<Users> updatePicture(@RequestBody Users user, @PathVariable("id") int userId) {
+//    Users newPic = userService.updateProfilePic(user, userId);
+//    return new ResponseEntity<>(newPic, HttpStatus.OK);
+//  }
+//
+//  // update status
+//  @PutMapping("/edit/status/{id}")
+//  public ResponseEntity<Users> updateStatus(@RequestBody Users user, @PathVariable("id") int userId) {
+//    Users newStatus = userService.updateStatus(user, userId);
+//    return new ResponseEntity<>(newStatus, HttpStatus.OK);
+//  }
+//
+//  // update profile bio
+//  @PutMapping("/edit/bio/{id}")
+//  public ResponseEntity<Users> updateBio(@RequestBody Users user, @PathVariable("id") int userId) {
+//    Users newBio = userService.updateBio(user, userId);
+//    return new ResponseEntity<>(newBio, HttpStatus.OK);
+//  }
 
-  // update profile picture
-  @PutMapping("/edit/pic/{id}")
-  public ResponseEntity<Users> updatePicture(@RequestBody Users user, @PathVariable("id") int userId) {
-    Users newPic = userService.updateProfilePic(user, userId);
-    return new ResponseEntity<>(newPic, HttpStatus.OK);
-  }
 
-  // update status
-  @PutMapping("/edit/status/{id}")
-  public ResponseEntity<Users> updateStatus(@RequestBody Users user, @PathVariable("id") int userId) {
-    Users newStatus = userService.updateStatus(user, userId);
-    return new ResponseEntity<>(newStatus, HttpStatus.OK);
-  }
+// OLD METHODS
+//  @PutMapping("/edit/")
+//  public ResponseEntity<Users> updateProfile(@RequestBody Users user) {
+//    Users updatedProfile = userRepo.save(user);
+//    return new ResponseEntity<>(updatedProfile, HttpStatus.OK);
+//  }
 
-  // update profile bio
-  @PutMapping("/edit/bio/{id}")
-  public ResponseEntity<Users> updateBio(@RequestBody Users user, @PathVariable("id") int userId) {
-    Users newBio = userService.updateBio(user, userId);
-    return new ResponseEntity<>(newBio, HttpStatus.OK);
-  }
+  // add new profile
+//  @PostMapping("/add")
+//  public ResponseEntity<Users> addProfile(@RequestBody Users user) {
+//    Optional<Users> profile = userRepo.findById(user.getId());
+//    if (profile.isPresent()) {
+//      Users newProfile = profile.get();
+//      userRepo.save(newProfile);
+//      return new ResponseEntity<>(newProfile, HttpStatus.CREATED);
+//    }
+//    return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+//  }
 
 }
