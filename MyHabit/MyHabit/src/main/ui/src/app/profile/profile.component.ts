@@ -34,4 +34,4 @@ export class ProfileComponent implements OnInit {
         this.userProfile = res;
       })
     }
-  }
+  }}

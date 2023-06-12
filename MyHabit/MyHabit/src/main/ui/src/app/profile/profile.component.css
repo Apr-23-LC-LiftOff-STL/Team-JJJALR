@@ -1,35 +1,14 @@
-/* *, *::after, *::before { */
-*::after, *::before {
-border: 0;
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-}
-
-:root {
---primary: white;
---secondary: #133394;
---light: #f4f5f5;
---danger: #d81616;
---shadow: rgba(99, 99, 99, 0.12);
---base: 1rem;
---large: calc(var(--base)*5);
---med: calc(var(--base)*3);
---sm: calc(var(--base)*1.5);
-}
-
 html {
-/* margin: 10px;
-padding: 20px; */
+height: 100%;
 }
 
 body {
 color: #292929;
 font: 90% Roboto, Arial, sans-serif;
 font-weight: 300;
-background-size: cover; 
-height: auto;
 background-repeat: no-repeat;
+background-size: 100% 100%;
+/* background-repeat: no-repeat; */
 background-position: center center;
 }
 
@@ -59,9 +38,6 @@ padding: 5px 20px;
 margin: 0;
 }
 
-body {
-}
-
 audio { 
 width: 220px; 
 margin-top: 20px;
@@ -72,16 +48,9 @@ margin: 90px;
 /* border: 2px solid red; */
 }
 
-#title {
-font-size: inherit;
-font-family: inherit;
-color: inherit;
-background-color: var(--light);
-padding: .5rem;
-}
-
-#title:focus {
-outline: 2px solid var(--secondary);
+div#entirepage-container {
+border: 2px solid transparent;
+background-size: 100% 100%;
 }
 
 .icons {
@@ -90,50 +59,6 @@ place-items: center;
 padding: var(--sm) 0;
 grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
 grid-gap: 1rem;
-}
-
-.modal-container.active {
-opacity: 1;
-pointer-events: all;
-}
-
-.modal-container.active .modal {
-transform: translateY(0);
-}
-
-.modal-container {
-background-color: whitesmoke;
-border: 1px solid red;
-position: fixed;
-top: 200px;
-bottom: 200px;
-left: 300px;
-right: 300px;
-display: grid;
-place-items: center;
-/* opacity: 0; */
-pointer-events: none;
-z-index: 4;
-transition: all 300ms ease-in-out;
-backdrop-filter: blur(10px);
-display:none;
-}
-
-
-
-
-
-
-
-
-.modal {
-border: 1px solid purple;
-/* padding: var(--med); */
-background-color: var(--primary);
-backdrop-filter: blur(10px);
-box-shadow: 1px 4px 30px 10px var(--shadow);
-transform: translateY(30%);
-transition: all 300ms ease-in;
 }
 
 div#entirehabits-container {
@@ -167,6 +92,7 @@ div#wrapper2 {
 float: right;
 width: 75%;
 margin-top: 20px;
+margin-left: 20px;
 border: 2px solid #D8D8D8;
 background-color: rgb(255, 255, 255, .75);
 padding: 10px;
@@ -213,15 +139,14 @@ img.friends {
 width: 100px;
 border-radius: 0%;
 border: .5px solid black;
-padding-left: 5px;
-margin-left: 10px;
 float: left;
 margin: 10px;
+padding: 5px;
 background-color: white;
 }
 
 /*---------------online bug---------------*/
-/* .icon-container {
+.icon-container {
 width: 92%;
 height: 92%;
 position: relative;
@@ -236,10 +161,9 @@ border: 2px solid white;
 bottom: 5%;
 right: 70%;
 position: absolute;
-} */
+}
 
 /*---------------status box---------------*/
-
 .statuscontainer {
 max-width: 1250px;
 padding: 20px;
