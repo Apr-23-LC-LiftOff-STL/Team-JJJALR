@@ -1,3 +1,7 @@
+<app-navbar></app-navbar>
+
+<body>
+
 <form name = "registrationFrom" (ngSubmit) = "register()" #f = "ngForm" action="action_page.php">
   <div class="container">
     <h1>Register</h1>
@@ -14,11 +18,12 @@
     <input type="password" placeholder="Repeat Password" name="secondPassword" [(ngModel)] = "model.secondPassword" id="secondPassword" required>
     <hr>
 
-    <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+    
     <button type="submit" class="registerbtn">Register</button>
   </div>
 
   <div class="container signin">
-    <p>Already have an account? <a href="#">Sign in</a>.</p>
+    <p>Already have an account? <a href="/login">Sign in</a>.</p>
   </div>
 </form>
+</body>

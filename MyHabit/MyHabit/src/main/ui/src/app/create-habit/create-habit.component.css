@@ -1,0 +1,142 @@
+.box {
+      margin: auto;
+      width: 500px;
+      height: 300px;
+      padding: 10px;
+      border: 2px solid grey;
+      border-radius: 25px;
+      text-align: center;
+      font: arial;
+}
+
+.imgcontainer{
+  text-align: center;
+  
+}
+
+img{
+    max-width: 40%;
+    padding: 0px;
+}
+
+
+.button{
+ 
+  font-family: arial;
+  font-size: 16px;
+  text-align: center;
+  padding: 20px;
+  
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+  /* border: 2px solid red; */
+}
+
+span {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.links {
+  display: flex;
+  gap: 20px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.links a {
+  text-decoration: none;
+}
+
+.statuscontainer {
+max-width: 1250px;
+padding: 20px;
+margin-bottom: 20px;
+/* border: 2px solid #D8D8D8; */
+background-color: rgb(255, 255, 255, .75);
+}
+
+.createbtn {
+  background-color: #add8e6;
+  border-radius:10px;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 20%;
+  opacity: 0.9;
+}
+
+.createbtn:hover {
+  opacity:1;
+  background-color: #607cb6;
+}
+
+.habitname{
+    width:60%;
+}
+
+.habitdescription{
+    width:60%;
+}
+
+.dropbtn {
+    background-color: #add8e6;
+    border-radius:6px;
+  color: white;
+  padding: 16px;
+  font-size: 8px;
+  border: none;
+  margin: 4px;
+  padding: 8px;
+  
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+
+.dropdown-content a:hover {background-color: #607cb6;}
+
+
+.dropdown:hover .dropdown-content {display: block;}
+
+
+.dropdown:hover .dropbtn {background-color: #607cb6;}
+
+
+

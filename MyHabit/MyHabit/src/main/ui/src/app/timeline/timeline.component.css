@@ -15,10 +15,7 @@
 }
 
 .sidebar {
-  --twitter-color: #50b7f5;
-  --twitter-background: #e6ecf0;
-
-    border-right: 1px solid var(--twitter-background);
+    border-right: 1px solid #e6ecf0;
     flex: 0.2;
     max-width: 1300px;
     /* min-width: 250px; */
@@ -41,6 +38,9 @@ img {
   display: flex;
   align-items: center;
   cursor: pointer;
+  /* background-color: #e6ecf0; */
+  background-color: transparent;
+  border: none;
 }
 
 .sidebarOption i, img {
@@ -51,23 +51,26 @@ img {
   font-weight: 800;
   font-size: 20px;
   margin-right: 20px;
+  margin-top: 13px;
 }
 
 .sidebarOption:hover {
-  background-color:var(--twitter-background);
+  background-color:#e6ecf0;
   border-radius: 30px;
-  color: var(--twitter-color);
+  color: #50b7f5;
   transition: color 100ms ease-out;
 }
 
 
-.sidebarOption.active {
-  color: var(--twitter-color);
+.sidebarOption:active {
+  color: #50b7f5;
+  border: none;
+  border-radius: 30px;
 }
 
 .sidebar-logout {
   width: 100%;
-  background-color:var(--twitter-color);
+  background-color:#50b7f5;
   border: none;
   color: white;
   font-weight: 900;
@@ -97,7 +100,7 @@ input {
   font-size: 15px;
 }
 
-.search-bar i:hover- {
-  color: var(--twitter-color);
+.search-bar i:hover{
+  color: #50b7f5;
 }
 

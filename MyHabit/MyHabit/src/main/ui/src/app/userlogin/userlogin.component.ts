@@ -10,12 +10,18 @@ import { HttpErrorResponse } from '@angular/common/http';
 })
 export class UserloginComponent implements OnInit {
   
+
+ 
   model: any = {};
 
   constructor(
     private http: HttpClient,
     private router: Router
   ) { }
+
+  // public onLoginClick(){
+  //   this.router.navigate(['./homepage']);
+  // }
 
   ngOnInit(): void {
   }
@@ -33,7 +39,7 @@ export class UserloginComponent implements OnInit {
       if(res.id !== 0){
         localStorage.setItem('authToken', res.id)
         console.log(localStorage.authToken)
-         this.router.navigate(["home"])
+         this.router.navigate(["homepage"])
       }
     }),
     // // (error: HttpErrorResponse) => {

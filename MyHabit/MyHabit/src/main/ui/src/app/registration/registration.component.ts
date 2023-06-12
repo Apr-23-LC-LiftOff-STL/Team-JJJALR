@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -29,7 +29,12 @@ export class RegistrationComponent implements OnInit {
     console.log(userData)
     this.http.post<any>(url, userData).subscribe(res =>{
       console.log(res)
-    })
+      if(res.userName != undefined){
+        this.router.navigate(["login"])
+      }
+    },(error: HttpErrorResponse) => {
+      alert(error.message);}
+      )
   }
 
 }

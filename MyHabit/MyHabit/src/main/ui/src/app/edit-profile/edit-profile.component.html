@@ -1,0 +1,111 @@
+<app-navbar></app-navbar>
+
+<head>
+    <title>myhabit | a place for good habits</title>
+    <link rel="stylesheet" href="edit-profile.component.css" />
+</head>
+
+<body>
+    <div id="entirepage-container">
+
+        <div id="header">
+            <h2>Edit Profile</h2>
+            <p>Update your profile information below.</p>
+        </div>
+        <hr>
+
+        <div id="content-container">
+            <form #editProfileForm="ngForm" (ngSubmit)="onUpdateProfile(editProfileForm)">
+
+                <br>
+
+                <h3><label for="personalInformation"><b>Personal Information</b></label></h3>
+                <div id="personalinfo">
+                    <fieldset id="personalInformation">
+
+                        <br>
+
+                        <input name="userName" type="hidden" #userName="ngModel" ngModel="{{profileEdit?.userName}}">
+                        <input name="passwordHash" type="hidden" #userName="ngModel"
+                            ngModel="{{profileEdit?.passwordHash}}">
+
+                        <label for="firstName">First Name: </label>
+                        <input name="firstName" class="form-control" required type="text" id="firstName"
+                            placeholder="Jane" #firstName="ngModel" ngModel="{{profileEdit?.firstName}}" size="20">
+
+                        <label for="lastName">Last Name: </label>
+                        <input name="lastName" class="form-control" required type="text" id="lastName" placeholder="Doe"
+                            #lastName="ngModel" ngModel="{{profileEdit?.lastName}}" size="20">
+
+                        <br><br>
+
+                        <label for="email">Email: </label>
+                        <input name="email" class="form-control" required type="email" id="email"
+                            placeholder="jane.doe@email.com" #email="ngModel" ngModel="{{profileEdit?.email}}" size="30">
+
+                        <br><br>
+
+                        <label for="location">Location: </label>
+                        <input name="location" class="form-control" required type="text" id="location"
+                            placeholder="St. Louis, MO" #location="ngModel" ngModel="{{profileEdit?.location}}"  size="20">
+
+                        <br><br>
+
+                    </fieldset>
+                </div>
+
+                <br>
+
+                <h3><label for="profileInformation"><b>Profile Information</b></label></h3>
+                <div id="profileinfo">
+                    <fieldset id="profileInformation">
+
+                        <br>
+
+                        <label for="displayName">Display Name: </label>
+                        <input name="displayName" class="form-control" type="text" id="displayName"
+                            placeholder="janedoe92" #displayName="ngModel" ngModel="{{profileEdit?.displayName}}" size="20">
+
+                        <br><br>
+
+                        <label for="status">Status: </label>
+                        <input name="status" class="form-control" type="text" id="status" placeholder="What's up?"
+                            #status="ngModel" ngModel="{{profileEdit?.status}}"  size="100%">
+
+                        <br><br>
+
+                        <label for="bio">Bio: </label>
+                        <input name="bio" class="form-control" type="text" id="bio"
+                            placeholder="Tell us about yourself..." #bio="ngModel" ngModel="{{profileEdit?.bio}}" size="100%">
+
+                        <br><br>
+
+                        <label for="picUrl">Profile Picture: </label>
+                        <input name="picUrl" class="form-control" type="text" id="picUrl" placeholder="Image URL"
+                            #picUrl="ngModel" ngModel="{{profileEdit?.picUrl}}" size="50">
+
+                        <br><br>
+
+                    </fieldset>
+                </div>
+                <div id="button">
+                    <br>
+                    <button value="submit" type="submit" class="savebtn">Save</button>
+                </div>
+                <br><br>
+            </form>
+        </div>
+    </div>
+
+    <hr>
+    <br>
+    <div id="footer">
+        <div class="container signin">
+            <p>Already have an account? <a href="/login">Sign in</a>.</p>
+        </div>
+
+        <br><br>
+
+        <p>This is not affiliated with the original MySpace.</p>
+    </div>
+</body>

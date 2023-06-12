@@ -1,9 +1,16 @@
 <!DOCTYPE HTML>
 <html lang="en">
+<app-navbar></app-navbar>
 
 <head>
   <title>myhabit | a place for good habits</title>
   <link rel="stylesheet" href="profile.component.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Roboto');
+  </style>
+  <script defer src="profile.component.ts"></script>
+  <title>Habit Tracker</title>  
 </head>
 
 <body>
@@ -26,12 +33,12 @@
             <div class="button-group pull-left">
               <a href="#" class="btn btn-primary">Post</a>
             </div>
-          
+
             <ul class="posts">
             </ul>
         
           </div>
-      
+
           <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
           <script src="app.js"></script>
     
@@ -53,8 +60,8 @@
             <div><img src="assets/images/4.jpeg" class="friends"></div>
             <div><img src="assets/images/5.jpeg" class="friends"></div>
             </div>
-        </div>
-  
+    </div>
+
     <div id="photobox">
     <h4>{{userProfile.firstName}}</h4>
     <div>

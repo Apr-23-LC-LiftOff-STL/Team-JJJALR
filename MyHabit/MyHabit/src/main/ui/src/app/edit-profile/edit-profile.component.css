@@ -1,0 +1,175 @@
+body {
+    color: #000000;
+    font: 90% Roboto, Arial, sans-serif;
+    font-weight: 300;
+}
+
+p {
+    padding: 15px 20px;
+    line-height: 1.8;
+    font-size: 10pt;
+}
+
+h2 {
+    padding: 5px 20px;
+    margin: 0;
+    font: Roboto, Arial, sans-serif;
+    font-size: 15pt;
+    font-weight: bold;
+    color: #000000;
+}
+
+h3 {
+    padding: 5px;
+    margin: 0;
+    font: Roboto, Arial, sans-serif;
+    font-size: 12pt;
+    font-weight: bold;
+    color: #000000;
+}
+
+/*---------------divs---------------*/
+div#entirepage-container {
+    border: 2px solid none;
+}
+
+div#content-container {
+    margin: 50px;
+}
+
+/*---------------fieldsets---------------*/
+fieldset#personalInformation {
+    border-color: #000000;
+    border-width: 1px;
+    font: 10pt Roboto, Arial, sans-serif;
+    font-weight: bold;
+}
+
+fieldset#profileInformation {
+    border-color: #000000;
+    border-width: 1px;
+    font: Roboto, Arial, sans-serif;
+    font-weight: bold;
+}
+
+/*---------------fields---------------*/
+#firstName {
+    border: 1px solid grey;
+    margin-left: 5px;
+    margin-right: 15px;
+}
+
+#firstName::placeholder{
+    color:rgb(137, 136, 136);
+    font-style: italic;
+    font-size: 9pt;
+}
+
+#lastName {
+    border: 1px solid grey;
+    margin-left: 5px;
+}
+
+#lastName::placeholder{
+    color:rgb(137, 136, 136);
+    font-style: italic;
+    font-size: 9pt;
+}
+
+#email {
+    border: 1px solid grey;
+    margin-left: 5px;
+}
+
+#email::placeholder{
+    color:rgb(137, 136, 136);
+    font-style: italic;
+    font-size: 9pt;
+}
+
+#location {
+    border: 1px solid grey;
+    margin-left: 5px;
+}
+
+#location::placeholder{
+    color:rgb(137, 136, 136);
+    font-style: italic;
+    font-size: 9pt;
+}
+
+#displayName {
+    border: 1px solid grey;
+    margin-left: 5px;
+}
+
+#displayName::placeholder{
+    color:rgb(137, 136, 136);
+    font-style: italic;
+    font-size: 9pt;
+}
+
+#status {
+    border: 1px solid grey;
+    margin-left: 5px;
+    text-align: left;
+ 
+}
+
+#status::placeholder{
+    color:rgb(137, 136, 136);
+    font-style: italic;
+    font-size: 9pt;
+}
+
+#bio {
+    border: 1px solid grey;
+    margin-left: 5px;
+}
+
+#bio::placeholder{
+    color:rgb(137, 136, 136);
+    font-style: italic;
+    font-size: 9pt;
+}
+
+#picUrl {
+    border: 1px solid grey;
+    margin-left: 5px;
+}
+
+#picUrl::placeholder{
+    color:rgb(137, 136, 136);
+    font-style: italic;
+    font-size: 9pt;
+}
+
+/*---------------button---------------*/
+.savebtn {
+    background-color: #428bca;
+    border: 1px solid black;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 15px;
+    padding-right: 15px;
+    min-height: 20px;
+    font: 10pt Roboto, Arial, sans-serif;
+    font-weight: bold;
+    color: #fefefe;
+}
+
+/*---------------footer---------------*/
+div#footer {
+    text-align: center;
+    clear: both;
+    width: 100%;
+}
+
+div#footer {
+    border: 2px solid none;
+    color: black;
+}
+
+div#footer p {
+    padding: 30px 10px;
+}

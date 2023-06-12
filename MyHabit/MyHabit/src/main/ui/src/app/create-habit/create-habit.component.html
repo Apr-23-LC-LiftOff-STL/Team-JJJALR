@@ -1,0 +1,45 @@
+<app-navbar></app-navbar>
+
+<div class="imgcontainer">
+<a href="/login"><img src="https://i.ibb.co/Zxg1VBF/myhabit.png" alt="myhabit" border="0"></a><br /><a target='_blank' href='https://imgbb.com/'></a><br />
+
+</div>
+
+<div class="box">
+        <p>Create a Habit:<p>
+    <div class="statuscontainer">
+
+        <div class="habit-row">
+            <div class="column">
+            <img src="https://i.ibb.co/0j1xHz4/battery-full.jpg" alt="battery-full" border="0">
+
+            <img src="https://i.ibb.co/9byVf8F/book.jpg" alt="book" border="0">
+
+            <img src="https://i.ibb.co/KKWY7gg/heart.jpg" alt="heart" border="0">
+
+            <img src="https://i.ibb.co/V3c9nGS/home.jpg" alt="home" border="0">
+            
+        </div>
+
+        <form  #habitForm="ngForm" (ngSubmit)="onAddHabit(habitForm)">
+        <fieldset>
+            <div class="form-group">
+            
+                <label for="name">Habit Name</label>  
+
+                    <input name="name" required ngModel #name="ngModel" id="name" type="text" class="form-control" placeholder="Habit Name">
+                <br>
+                <label for="Description">Description:</label>
+
+                    <input name="description" required ngModel #name="ngModel" id="description" type="text" class="form-control" placeholder="Habit Description">
+
+                <br>
+
+                <button type="submit" value="Submit" class="createbtn">Create</button>
+                   
+            </div>
+        </fieldset>    
+    </form>
+
+
+

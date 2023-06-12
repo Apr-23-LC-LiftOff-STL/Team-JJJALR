@@ -49,20 +49,17 @@ public class AuthenticationController {
     }
 
     @PostMapping("/register")
-    public String addUsers(@RequestBody RegistrationDTO registrationDTO) {
-        Users existingUser = userRepo.getByUserName(registrationDTO.getUserName());
-        //placeholder returns
-        if (existingUser != null){
-            return "login";
-        } else if (!(registrationDTO.getPassword().equals(registrationDTO.getSecondPassword()))) {
-            return "bad password";
-
-        } else {
-           Users newUser = new Users(registrationDTO.getUserName(),registrationDTO.getPassword());
-           userRepo.save(newUser);
-           return "account created";
-
-        }
+    public ResponseEntity<?> addUsers(@RequestBody RegistrationDTO registrationDTO) {
+      Users existingUser = userRepo.getByUserName(registrationDTO.getUserName());
+      if (existingUser != null) {
+        return new ResponseEntity<>( HttpStatus.BAD_REQUEST);
+      } else if (!(registrationDTO.getPassword().equals(registrationDTO.getSecondPassword()))) {
+        return new ResponseEntity<>( HttpStatus.BAD_REQUEST);
+      } else {
+        Users newUser = new Users(registrationDTO.getUserName(), registrationDTO.getPassword(), registrationDTO.getFirstName(), registrationDTO.getLastName(), registrationDTO.getDisplayName(), registrationDTO.getEmail(), registrationDTO.getLocation(), registrationDTO.getStatus(), registrationDTO.getBio(), registrationDTO.getProfileImageURL());
+        userRepo.save(newUser);
+        return new ResponseEntity<Users>(newUser, HttpStatus.OK);
+      }
     }
 
     @PostMapping("/login")
