@@ -26,15 +26,15 @@ export class ProfileComponent implements OnInit {
   }
 
 //Query Selectors  
-const habits = document.querySelectorAll('.habit');
-const themeBtn = document.querySelector('#modal');
+habits = document.querySelectorAll('.habit');
+themeBtn = document.querySelector('#modal');
 
 //functions
-const storage = {
+storage = {
 
 }
 
-const ui = {
+ui = {
   theme() {
     // themeBtn.classList.toggle('dark');
     // const root = document.querySelector(':root');
@@ -42,18 +42,19 @@ const ui = {
   }
 }
 
-function addHabit(){
+ addHabit(){
   let container: HTMLCollectionOf<Element> = document.getElementsByClassName(".modal-container");
     
   }
     
 
 //delete
-habits.forEach(habit => {
-  habit.addEventListener('click', () => {
-    console.log('clicked');
-    // habit.classList.toggle('completed');
-  })
-})
+
+// habits.forEach(habit => {
+//   habit.addEventListener('click', () => {
+//     console.log('clicked');
+//     // habit.classList.toggle('completed');
+//   })
+// })
 }
 
